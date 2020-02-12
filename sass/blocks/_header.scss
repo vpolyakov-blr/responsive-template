@@ -3,14 +3,6 @@
     min-height: 100vh;
     max-width: 100%;
     position: relative;
-    &__video{
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        -webkit-transform: scaleX(1.5); 
-        -moz-transform: scaleX(1.72);
-        opacity: .5;
-    }
     &__menu{
         z-index: 3;
         display: inline-block;
@@ -19,7 +11,7 @@
         height: 100vh;
         width: 30%;
         text-align: right;
-        position: relative;
+        position: absolute;
         left: -30%;
         transition: left .5s linear;
         nav{
@@ -114,6 +106,71 @@
                 transform: rotate(-45deg);
                 bottom: 19px;
             }
+        }
+    }
+    &__content{
+        top: 0;
+        left: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__card{
+        position: relative;
+        width: 250px;
+        background: url(../img/bg-cards.jpg) center (center / cover) no-repeat;
+        cursor: pointer;
+        transform: skew(10deg);
+        transition: all .3s linear;
+        text-align: center;
+        color: white;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        &:hover{
+            transform: skew(10deg) translateY(-20px);
+            box-shadow: 7px 7px 30px 0px rgba(51, 50, 50, 0.75);
+        }
+    }
+    &__card+&__card{
+        margin-left: 10px;
+    }
+    &__cards{
+        display: flex;
+        justify-content: center;
+    }
+    &__info{
+        text-transform: uppercase;
+        color: white;
+        margin-top: 15px;
+        font-size: 30px;
+    }
+    &__subtitle{
+        font-size: 20px;
+        margin-top: 15px;
+    }
+    &__text{
+        font-size: 16px;
+        line-height: 1.2;
+        margin-top: 15px;
+        flex: 1 1 auto;
+        color: black;
+        background-color: rgba($color: white, $alpha: .3);
+        padding: 10px 0;
+    }
+    &__btn{
+        text-transform: uppercase;
+        font-weight: 800;
+        padding: 10px;
+        margin-top: 10px;
+        background: rgb(134,78,175);
+        background: linear-gradient(90deg, rgba(134,78,175,1) 0%, rgba(142,139,184,1) 100%);
+        transition: all .3s linear;
+        &:hover{
+            transform: translateY(-5px);
+            background: rgb(142,139,184);
+            background: linear-gradient(90deg, rgba(142,139,184,1) 0%, rgba(134,62,175,1) 100%);
         }
     }
 }
