@@ -40,10 +40,54 @@ li {
 .header__menu {
   display: inline-block;
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
+  padding: 20px 0;
   height: 100vh;
   width: 30%;
   text-align: right;
+  overflow: auto;
+}
+
+.header__menu nav {
+  margin-top: 30px;
+}
+
+.header__menu a {
+  font-size: 22px;
+  position: relative;
+  -webkit-transition: color .2s linear;
+  transition: color .2s linear;
+}
+
+.header__menu a::after {
+  content: '';
+  height: 100%;
+  width: 2px;
+  background-color: white;
+  position: absolute;
+  right: -25px;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.header__menu li {
+  overflow: hidden;
+  padding: 5px 20px;
+  cursor: pointer;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.header__menu li:hover {
+  -webkit-transform: translateX(5px);
+  transform: translateX(5px);
+}
+
+.header__menu li:hover a {
+  color: #00a1ff;
+}
+
+.header__menu li:hover a::after {
+  right: -14px;
 }
 
 .header__logo {
