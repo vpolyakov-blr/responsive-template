@@ -33,6 +33,12 @@ li{
 	list-style: none;
 }
 
+.header__container{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
 @import 'base/mixins';
 @import 'base/variables';
 @import 'blocks/header';
