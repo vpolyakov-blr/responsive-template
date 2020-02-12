@@ -45,6 +45,10 @@ li {
   width: 30%;
   text-align: right;
   overflow: auto;
+  position: relative;
+  left: -30%;
+  -webkit-transition: left .5s linear;
+  transition: left .5s linear;
 }
 
 .header__menu nav {
@@ -90,6 +94,10 @@ li {
   right: -14px;
 }
 
+.header__menu.active {
+  left: 0;
+}
+
 .header__logo {
   max-width: 150px;
   margin: 0 auto;
@@ -97,4 +105,62 @@ li {
 
 .header__logo img {
   width: 100%;
+}
+
+.header__burger {
+  width: 50px;
+  height: 40px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.header__burger span {
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.header__burger::before, .header__burger::after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+}
+
+.header__burger::before {
+  top: 0;
+}
+
+.header__burger::after {
+  bottom: 0;
+}
+
+.header__burger.active span {
+  top: 110%;
+}
+
+.header__burger.active::before {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: 19px;
+}
+
+.header__burger.active::after {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  bottom: 19px;
 }
