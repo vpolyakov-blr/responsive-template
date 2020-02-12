@@ -1,0 +1,19 @@
+.header{
+    background: url(../img/main-bg.jpg) center (center / cover) no-repeat;
+    min-height: 100vh;
+    &__menu{
+        display: inline-block;
+        background-color: rgba($color: black, $alpha: .7);
+        padding: 20px;
+        height: 100vh;
+        width: 30%;
+        text-align: right;
+    }
+    &__logo{
+        max-width: 150px;
+        margin: 0 auto;
+        img{
+            width: 100%;
+        }
+    }
+}
